@@ -1,0 +1,92 @@
+.modalContainer {
+    background-color: #dddddd;
+    /* border-radius: 5px; */
+    padding: 25px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    /* height: 250p; */
+  }
+  
+  .inputContainer {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    width: 94%;
+    padding:7.5px;
+    padding-top: 27px;
+    height: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    /* margin-top: -20px; */
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .inputFilled {
+    border-color: #2196F3;
+    border-top: white;
+    border-left: white;
+    border-right: white;
+    border-width:0.3ch;
+    transition: border-color 0.3s ease;
+    top: 50;
+  }
+  
+  .inputLabel {
+    position: absolute;
+    top: 0;
+    margin-top: 17.5px;
+    left: 10px;
+    padding: 0 3px;
+    font-size: 16px;
+    color: #999;
+    background-color: white;
+    transition: transform 0.3s ease, font-size 0.3s ease, top 0.3s ease;
+  }
+  
+  .input:focus ~ .inputLabel, .inputFilled ~ .inputLabel {
+    transform: translateY(-50%) scale(0.75);
+    top: -6px;
+    left: -1px;
+    font-size: 12px;
+    color: #007bff;
+    /* background-color:#dddddd ; */
+  }  
+   
+  .categorySelect select {
+    width: 100%;
+    padding: 10px;
+    /* height: 50px; */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #333;
+    font-size: 0.9rem;
+  }
+  
+  .buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    
+  }
+  
+  .cancelButton,
+  .addButton {
+    background-color: #515CC6;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+  
+  .cancelButton:hover,
+  .addButton:hover {
+    background-color: #515CC6;
+  }
