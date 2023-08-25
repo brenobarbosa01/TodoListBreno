@@ -23,5 +23,5 @@ Desafio feito com 🔗 NextJS
 
 <br>
 <br>
-
+Projeto hospedado : https://todo-list-breno-dusky.vercel.app/
 
