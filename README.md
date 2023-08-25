@@ -1,14 +1,9 @@
 
 Desafio feito com 🔗 NextJS
   
-  <h1 align="center">
+  <h3 align="center">
     Listagem, criação e exclusão de posts.
 
-
-<p align="center">
- <a href="#objetivo">Objetivo</a> •
- <a href="#tecnologias">Tecnologias</a> • 
-</p>
 
 <div id='objetivo'>
 	<h1>Objetivo</h1>
