@@ -133,7 +133,7 @@ const TodoList: React.FC = () => {
       {taskToDelete && (
         <div className={styles.modalBackground}>
           <div className={styles.deleteModal}>
-            <p>Deseja deletar a tarefa "{taskToDelete.task}"?</p>
+            <p>Deseja deletar a tarefa {taskToDelete.task}?</p>
             <button className={styles.cancelButtonModal} onClick={closeModal}>
               Cancelar
             </button>
