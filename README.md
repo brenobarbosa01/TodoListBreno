@@ -2,7 +2,7 @@
 Desafio feito com 🔗 NextJS
   
   <h3>
-    Listagem, criação e exclusão de posts.
+    Listagem, criação e exclusão de tarefas.
 
 
 <div id='objetivo'>
