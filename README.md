@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Desafio feito com 🔗 NextJS
+  
+  <h1 align="center">
+    Listagem, criação e exclusão de posts.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<p align="center">
+ <a href="#objetivo">Objetivo</a> •
+ <a href="#tecnologias">Tecnologias</a> • 
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<div id='objetivo'>
+	<h1>Objetivo</h1>
+	O objetivo deste projeto era apenas criar uma página com o front-end, uma lista de coisas a se fazer mais especificamente, onde você pode adicionar tarefas e marcar se elas estão feitas ou não,
+ adicionei também a funcionalidade de excluir as tarefas ao clicar em cima da descrição da mesma.
+	
+</div>
+<br>
+<br>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+	
+<h1>Como executar o projeto</h1>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<p>3 - npm install</p>
+<p>4 - npm run dev</p>
+<br>
+<p>Caso o projeto não abra automaticamente no seu navegador, cole esta URL no seu navegador http://localhost:3000 .</p>
 
-## Learn More
+<br>
+<br>
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
