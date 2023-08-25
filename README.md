@@ -21,9 +21,9 @@ Desafio feito com 🔗 NextJS
 
 	
 <h1>Como executar o projeto</h1>
-
-<p>3 - npm install</p>
-<p>4 - npm run dev</p>
+<p>No terminal do Visual Studio Code execute os comandos :
+<p> npm install</p>
+<p> npm run dev</p>
 <br>
 <p>Caso o projeto não abra automaticamente no seu navegador, cole esta URL no seu navegador http://localhost:3000 .</p>
 
