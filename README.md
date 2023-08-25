@@ -20,7 +20,7 @@ Desafio feito com 🔗 NextJS
 <p> npm install</p>
 <p> npm run dev</p>
 <br>
-<p>Caso o projeto não abra automaticamente no seu navegador, cole esta URL no seu navegador http://localhost:3000 .</p>
+<p>Caso o projeto não abra automaticamente, cole esta URL no seu navegador http://localhost:3000 e o projeto estará rodando.</p>
 
 <br>
 <br>
