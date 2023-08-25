@@ -94,7 +94,7 @@
 .categoryIconLis{
     margin-right: 4px; 
     color: rgb(151, 151, 151);
-    margin-top:3px;
+    margin-top:4px;
 }
 
 
@@ -115,8 +115,10 @@
 }
 
 .categorySubtitle {
-    font-size: 11px;
+    position: absolute;
+    font-size: 11.5px;
     opacity: 0.6;
+    margin-top: 3px;
 }
 
 .checkColumn {
