@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
 import styles from '../styles/TaskModal.module.css';
+import { CardGiftcard, MonetizationOn, DesktopMac, ShoppingCart } from '@mui/icons-material'; // Importe os ícones do Material-UI
+
 
 interface TaskModalProps {
   onTaskAdd: (task: string, category: string) => void;
@@ -10,7 +12,7 @@ interface TaskModalProps {
 
 const TaskModal: React.FC<TaskModalProps> = ({ onTaskAdd, categories, onClose }) => {
   const [newTask, setNewTask] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<{ value: string; label: string } | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [modalExpanded, setModalExpanded] = useState(false);
 
   const categoryOptions = categories.map((category) => ({
@@ -46,7 +48,7 @@ const TaskModal: React.FC<TaskModalProps> = ({ onTaskAdd, categories, onClose })
         <label className={styles.inputLabel}>Tarefa</label>
       </div>
       <div className={`${styles.categorySelect} ${modalExpanded ? styles.expanded : ''}`}>
-        <Select
+      <Select
           value={selectedCategory}
           onChange={(selectedOption) => setSelectedCategory(selectedOption)}
           options={categoryOptions}
@@ -56,8 +58,9 @@ const TaskModal: React.FC<TaskModalProps> = ({ onTaskAdd, categories, onClose })
           styles={{
             input: (provided) => ({
               ...provided,
-              height: '42px',
-              fontSize: '15px',
+              height: '42px', // Defina a altura desejada
+              fontSize: '15px', // Defina o tamanho da fonte desejado
+              // Outros estilos personalizados, se necessário
             }),
           }}
         />

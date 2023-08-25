@@ -1,8 +1,8 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/TodoList.module.css'
+import styles from '../styles/TodoList.module.css';
 import TaskModal from './TaskModal';
-import { CardGiftcard, MonetizationOn, DesktopMac, ShoppingCart } from '@mui/icons-material'; // Importe os ícones do Material-UI
+import { CardGiftcard, MonetizationOn, DesktopMac, ShoppingCart } from '@mui/icons-material';
 
 const TodoList: React.FC = () => {
   const [tasks, setTasks] = useState<{ id: number; task: string; category: string; completed: boolean }[]>([]);
@@ -55,7 +55,11 @@ const TodoList: React.FC = () => {
   const tasksCompleted = tasks.filter((task) => task.completed);
 
   const currentDate = new Date();
-  const formattedDate = new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' }).format(currentDate);
+  const formattedDate = new Intl.DateTimeFormat('pt-BR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  }).format(currentDate);
 
   return (
     <div className={styles.container}>
@@ -68,56 +72,63 @@ const TodoList: React.FC = () => {
       </div>
       <div className={styles.section}>
         <h4 className={styles.sectionTitle}>A fazer</h4>
-        <ul className={styles.taskList}>
-          {tasksToDo.map((task) => (
-            <li key={task.id} className={styles.task}>
-              <div className={styles.taskDescription}>
-                <div className={styles.checkColumn}>
-                  <input
-                    type="checkbox"
-                    checked={task.completed}
-                    onChange={() => toggleComplete(task.id)}
-                    className={styles.checkbox}
-                  />
-                  <div>
-                    <span onClick={() => openDeleteModal(task.id, task.task)} className={styles.taskText}>{task.task}</span>
+        {tasksToDo.length === 0 ? (
+          <p className={styles.emptyMessage}>Adicione tarefas clicando no botão de "+"!</p>
+        ) : (
+          <ul className={styles.taskList}>
+            {tasksToDo.map((task) => (
+              <li key={task.id} className={styles.task}>
+                <div className={styles.taskDescription}>
+                  <div className={styles.checkColumn}>
+                    <input
+                      type="checkbox"
+                      checked={task.completed}
+                      onChange={() => toggleComplete(task.id)}
+                      className={styles.checkbox}
+                    />
+                    <div>
+                      <span onClick={() => openDeleteModal(task.id, task.task)} className={styles.taskText}>{task.task}</span>
+                    </div>
+                    {task.category === 'Casamento' && <CardGiftcard className={styles.categoryIconCas} style={{ fontSize: 11 }} />}
+                    {task.category === 'Finanças' && <MonetizationOn className={styles.categoryIconFin} style={{ fontSize: 11 }} />}
+                    {task.category === 'Trabalho' && <DesktopMac className={styles.categoryIconTra} style={{ fontSize: 11 }} />}
+                    {task.category === 'Lista de Compras' && <ShoppingCart className={styles.categoryIconLis} style={{ fontSize: 11}} />}
+                    {task.category && <span className={styles.categorySubtitle}>{task.category}</span>}
                   </div>
-                  {task.category === 'Casamento' && <CardGiftcard className={styles.categoryIconCas} style={{ fontSize: 11 }} />}
-                  {task.category === 'Finanças' && <MonetizationOn className={styles.categoryIconFin} style={{ fontSize: 11 }} />}
-                  {task.category === 'Trabalho' && <DesktopMac className={styles.categoryIconTra} style={{ fontSize: 11 }} />}
-                  {task.category === 'Lista de Compras' && <ShoppingCart className={styles.categoryIconLis} style={{ fontSize: 11}} />}
-                  {task.category && <span className={styles.categorySubtitle}>{task.category}</span>}
                 </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
       <div className={styles.section}>
         <h4 className={styles.sectionTitle}>Completas</h4>
-        <ul className={styles.taskList}>
-          {tasksCompleted.map((task) => (
-            <li
-              key={task.id}
-              className={`${styles.task} ${task.completed ? styles.taskCompleted : ''}`}
-            >
-              <div className={styles.taskDescription}>
-                <div className={styles.checkColumn}>
-                  <input
-                    type="checkbox"
-                    checked={task.completed}
-                    onChange={() => toggleComplete(task.id)}
-                    className={styles.checkbox}
-                  />
-                  <div>
-                    <span onClick={() => openDeleteModal(task.id, task.task)} className={styles.taskText}>{task.task}</span>
+        {tasksCompleted.length === 0 ? (
+          <p className={styles.emptyMessage}>Nenhuma tarefa completa.</p>
+        ) : (
+          <ul className={styles.taskList}>
+            {tasksCompleted.map((task) => (
+              <li
+                key={task.id}
+                className={`${styles.task} ${task.completed ? styles.taskCompleted : ''}`}
+              >
+                <div className={styles.taskDescription}>
+                  <div className={styles.checkColumn}>
+                    <input
+                      type="checkbox"
+                      checked={task.completed}
+                      onChange={() => toggleComplete(task.id)}
+                      className={styles.checkbox}
+                    />
+                    <div>
+                      <span onClick={() => openDeleteModal(task.id, task.task)} className={styles.taskText}>{task.task}</span>
+                    </div>
                   </div>
-                  {/* {task.category && <span className={styles.categorySubtitle}>{task.category}</span>} */}
                 </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
       <div className={styles.addButtonContainer}>
         <button className={styles.addButton} onClick={() => setIsModalOpen(true)}>
@@ -129,18 +140,16 @@ const TodoList: React.FC = () => {
           <TaskModal onTaskAdd={addTask} categories={categories} onClose={() => setIsModalOpen(false)} />
         </div>
       )}
-      {/* {isModalOpen && <TaskModal onTaskAdd={addTask} categories={categories} onClose={() => setIsModalOpen(false)} />} */}
       {taskToDelete && (
         <div className={styles.modalBackground}>
           <div className={styles.deleteModal}>
-            <p>Deseja deletar a tarefa {taskToDelete.task}?</p>
+            <p>Deseja deletar a tarefa "{taskToDelete.task}"?</p>
             <button className={styles.cancelButtonModal} onClick={closeModal}>
               Cancelar
             </button>
             <button className={styles.deleteButton} onClick={confirmDelete}>
               Deletar
             </button>
-
           </div>
         </div>
       )}
