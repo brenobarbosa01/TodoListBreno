@@ -73,7 +73,7 @@ const TodoList: React.FC = () => {
       <div className={styles.section}>
         <h4 className={styles.sectionTitle}>A fazer</h4>
         {tasksToDo.length === 0 ? (
-          <p className={styles.emptyMessage}>Adicione tarefas clicando no botão de "+"!</p>
+          <p className={styles.emptyMessage}>Adicione tarefas clicando no botão de +!</p>
         ) : (
           <ul className={styles.taskList}>
             {tasksToDo.map((task) => (
@@ -143,7 +143,7 @@ const TodoList: React.FC = () => {
       {taskToDelete && (
         <div className={styles.modalBackground}>
           <div className={styles.deleteModal}>
-            <p>Deseja deletar a tarefa "{taskToDelete.task}"?</p>
+            <p>Deseja deletar a tarefa {taskToDelete.task}?</p>
             <button className={styles.cancelButtonModal} onClick={closeModal}>
               Cancelar
             </button>
