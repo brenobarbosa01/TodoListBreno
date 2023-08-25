@@ -1,7 +1,7 @@
 
 Desafio feito com 🔗 NextJS
   
-  <h3 align="center">
+  <h3>
     Listagem, criação e exclusão de posts.
 
 
